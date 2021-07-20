@@ -25,8 +25,8 @@ $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
   # 以下に回答を記載
   $count == 0;
-  foreach($numbers as $number) {
-    if($number === 3){
+  foreach ($numbers as $number) {
+    if ($number === 3) {
       $count++;
     }
   }
@@ -49,6 +49,8 @@ $array1 = [];
 $array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
+  var_dump(empty($array1));
+  var_dump(empty($array2));
 
 echo PHP_EOL;
 
@@ -56,6 +58,13 @@ print("#####q6#####".PHP_EOL);
 $numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
+  $numbers2 = [];
+  foreach ($numbers1 as $number) {
+    $number2 = $number * 10;
+    array_push($numbers2, $number2);
+  }
+
+  print_r($numbers2);
 
 echo PHP_EOL;
 
@@ -63,6 +72,7 @@ print("#####q7#####".PHP_EOL);
 $array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
+  $array = array_map(intval, $array);
 
   # 以下は変更しないで下さい
 var_dump($array);
@@ -73,6 +83,8 @@ print("#####q8#####".PHP_EOL);
 $programming_languages = ["php", "ruby", "python", "javascript"];
 
   # 以下に回答を記載
+  $programming_languages = array_map('ucfirst', $programming_languages);
+  $upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 
   # 以下は変更しないで下さい
 print_r($programming_languages);
