@@ -5,98 +5,133 @@ print("#####q1#####".PHP_EOL);
 $names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
-  array_push($names, "斎藤");
-  print_r($names);
+  <?php
+    $names = ["田中", "佐藤", "佐々木", "高橋"];
+
+    array_push($names, "斎藤");
+    print_r($names);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q2#####".PHP_EOL);
-$array1 = ["dog", "cat", "fish"];
-$array2 = ["bird", "bat", "tiger"];
 
   # 以下に回答を記載
-  $array = array_merge($array1, $array2);
-  print_r($array);
+  <?php
+    $array1 = ["dog", "cat", "fish"];
+    $array2 = ["bird", "bat", "tiger"];
+
+    $array = array_merge($array1, $array2);
+    print_r($array);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q3#####".PHP_EOL);
-$numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
 
   # 以下に回答を記載
-  $count == 0;
-  foreach ($numbers as $number) {
-    if ($number === 3) {
-      $count++;
-    }
-  }
+  <?php
+    $numbers = [1, 5, 8, 10, 2, 3, 2, 3, 1, 4, 5, 9];
+    $count == 0;
 
-  print_r("配列の中に3は" . $count . "回あります。");
+    foreach ($numbers as $number) {
+      if ($number === 3) {
+        $count++;
+      }
+    }
+
+    print_r("配列の中に3は" . $count . "回あります。");
+  ?>
 
 echo PHP_EOL;
 
 print("#####q4#####".PHP_EOL);
-$sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
 
   # 以下に回答を記載
-  $sports = array_diff($sports, [null]);
-  print_r($sports);
+  <?php
+    $sports = ["サッカー", "フットサル", null, "野球", "バスケ", null, "バレー"];
+
+    $sports = array_diff($sports, [null]);
+    print_r($sports);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q5#####".PHP_EOL);
-$array1 = [];
-$array2 = [1, 5, 8, 10];
 
   # 以下に回答を記載
-  var_dump(empty($array1));
-  var_dump(empty($array2));
+  <?php
+    $array1 = [];
+    $array2 = [1, 5, 8, 10];
 
+    var_dump(empty($array1));
+    var_dump(empty($array2));
+  ?>
 echo PHP_EOL;
 
 print("#####q6#####".PHP_EOL);
-$numbers1 = [1, 2, 3, 4, 5];
 
   # 以下に回答を記載
-  $numbers2 = [];
-  foreach ($numbers1 as $number) {
-    $number2 = $number * 10;
-    array_push($numbers2, $number2);
-  }
+  <?php
+    $numbers1 = [1, 2, 3, 4, 5];
+    $numbers2 = [];
 
-  print_r($numbers2);
+    foreach ($numbers1 as $number) {
+      $number2 = $number * 10;
+      array_push($numbers2, $number2);
+    }
+
+    print_r($numbers2);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q7#####".PHP_EOL);
-$array = ["1", "2", "3", "4", "5"];
 
   # 以下に回答を記載
-  $array = array_map(intval, $array);
+  <?php
+    $array = ["1", "2", "3", "4", "5"];
+    $array = array_map('intval', $array);
 
-  # 以下は変更しないで下さい
-var_dump($array);
+    # 以下は変更しないで下さい
+    var_dump($array);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q8#####".PHP_EOL);
-$programming_languages = ["php", "ruby", "python", "javascript"];
 
   # 以下に回答を記載
-  $programming_languages = array_map('ucfirst', $programming_languages);
-  $upper_case_programming_languages = array_map('strtoupper', $programming_languages);
 
-  # 以下は変更しないで下さい
-print_r($programming_languages);
-echo PHP_EOL;
-print_r($upper_case_programming_languages);
+  <?php
+    $programming_languages = ["php", "ruby", "python", "javascript"];
+
+    $programming_languages = array_map('ucfirst', $programming_languages);
+    $upper_case_programming_languages = array_map('strtoupper', $programming_languages);
+
+    # 以下は変更しないで下さい
+    print_r($programming_languages);
+    echo PHP_EOL;
+    print_r($upper_case_programming_languages);
+  ?>
 
 echo PHP_EOL;
 
 print("#####q9#####".PHP_EOL);
-$names = ["田中", "佐藤", "佐々木", "高橋"];
 
   # 以下に回答を記載
+  <?php
+  $names = ["田中", "佐藤", "佐々木", "高橋"];
+  $names2 = [];
+
+  foreach ($names as $key => $name) {
+    $number = $key + 1;
+    $name2 = "会員No." . $number . " " . $name;
+    array_push($names2, $name2);
+    }
+
+    print_r($names2);
+  ?>
 
 echo PHP_EOL;
 
