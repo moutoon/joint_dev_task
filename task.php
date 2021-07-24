@@ -212,35 +212,91 @@ print("#####q13#####".PHP_EOL);
 
             $user_data   = ["name" => "神里", "age" => 31, "address" => "埼玉"];
             $update_data = ["age" => 32, "address" => "沖縄"];
+            $user_data   = array_merge($user_data, $update_data);   // $user_dataに$update_dataを結合して（同じキーの場合は上書きされる）$user_dataに代入
+            print_r($user_data);                                    // $user_dataを出力
 
         ?>
 
 echo PHP_EOL;
 
 print("#####q14#####".PHP_EOL);
-$data = ["name" => "satou", "age" => 33, "address" => "saitama", "hobby" => "soccer", "email" => "hoge@fuga.com"];
 
-  # 以下に回答を記載
+    # 以下に回答を記載
+
+        <?php
+
+            $data = [
+                "name"   => "satou",
+                "age"    => 33,
+                "addres" => "saitama",
+                "hobby"  => "soccer",
+                "email"  => "hoge@fuga.com"
+                ];
+
+            $data = array_values($data);    // 値だけを抽出して配列を返し、帰ってきた配列を$data代入する
+            print_r($data);                 // $dataを出力する
+
+        ?>
 
 echo PHP_EOL;
 
 print("#####q15#####".PHP_EOL);
-$data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
-$data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
 
-  # 以下に回答を記載
+    # 以下に回答を記載
+
+        <?php
+
+            // array_key_exists() 配列のkeyが存在するか調べる関数
+            $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
+            if (array_key_exists("age", $data1)) {
+                print_r("OK" . PHP_EOL);
+            } else {
+                print_r("NG" . PHP_EOL);
+            }
+
+            $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
+            if (array_key_exists("age", $data2)) {
+                print_r("OK" . PHP_EOL);
+            } else {
+                print_r("NG" . PHP_EOL);
+            }
+
+            // isset() 変数がセットされていて、それがNULLかどうか調べる関数
+            // 指定したキーの要素がNULLの場合はfalseを返す
+            $data1 = ["name" => "saitou", "hobby" => "soccer", "age" => 33, "role" => "admin"];
+            if (isset($data1["age"])) {
+                print_r("OK" . PHP_EOL);
+            } else {
+                print_r("NG" . PHP_EOL);
+            }
+
+            $data2 = ["name" => "yamada", "hobby" => "baseball", "role" => "normal"];
+            if (isset($data2["age"])) {
+                print_r("OK" . PHP_EOL);
+            } else {
+                print_r("NG" . PHP_EOL);
+            }
+        ?>
 
 echo PHP_EOL;
 
 print("#####q16#####".PHP_EOL);
-$users = [
-  ["name" => "satou", "age" => 22],
-  ["name" => "yamada", "age" => 12],
-  ["name" => "takahashi", "age" => 32],
-  ["name" => "nakamura", "age" => 41]
-];
 
-  # 以下に回答を記載
+    # 以下に回答を記載
+
+        <?php
+
+            $users = [
+                ["name" => "satou", "age" => 22],
+                ["name" => "yamada", "age" => 12],
+                ["name" => "takahashi", "age" => 32],
+                ["name" => "nakamura", "age" => 41]
+            ];
+
+            foreach ($users as $key => $user) {
+                echo "私の名前は" . $user["name"] . "です。年齢は" . $user["age"] . "歳です。" . PHP_EOL;
+            }
+        ?>
 
 echo PHP_EOL;
 
