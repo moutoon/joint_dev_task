@@ -301,31 +301,83 @@ print("#####q16#####".PHP_EOL);
 echo PHP_EOL;
 
 print("#####q17#####".PHP_EOL);
-class User
-{
 
-  # コードを追加
+<?php
 
-}
+    // クラスを定義（設計図に例えられることが多い＞
+    class User
+    {
 
-$user1 = new User("神里", 32, "男");
-$user2 = new User("あじー", 32, "男");
+        // プロパティ（インスタンス変数）：クラスが持つ情報
+        protected $name;
+        protected $age;
+        protected $sex;
 
-$user1->info();
-print("-------------".PHP_EOL);
-$user2->info();
+        # コードを追加
+        // constructメソッド：プロパティの初期値の設定
+        public function __construct($name, $age, $sex)
+        {
+            $this->name = $name;
+            $this->age = $age;
+            $this->sex = $sex;
+        }
 
+        public function info()
+        {
+            print("名前:" . $this->name . PHP_EOL);
+            print("年齢:" . $this->age . PHP_EOL);
+            print("性別:" . $this->sex . PHP_EOL);
+        }
+
+    }
+
+    // インスタンス（物体）を作成
+    $user1 = new User("神里", 32, "男");
+    $user2 = new User("あじー", 32, "男");
+
+    $user1->info();
+    print("-------------".PHP_EOL);
+    $user2->info();
+
+?>
 echo PHP_EOL;
 
 print("#####q18#####".PHP_EOL);
 
-  # コードを追加
+    # コードを追加
 
-$man1 = new Man("あじー", 32);
-$man2 = new Man("ゆたぼん", 10);
+    <?php
 
-$man1->introduce();
-$man2->introduce();
+        class Man
+        {
+
+            protected $name;
+            protected $age;
+
+            public function __construct($name, $age)
+            {
+                $this->name = $name;
+                $this->age = $age;
+            }
+
+            public function introduce()
+            {
+                if ($this->age > 11) {
+                    print("こんにちは，あじーと申します。宜しくお願いいたします。" . PHP_EOL);
+                } else {
+                    print("はいさいまいど〜，ゆたぼんです！！！" . PHP_EOL);
+                }
+            }
+
+        }
+
+        $man1 = new Man("あじー", 32);
+        $man2 = new Man("ゆたぼん", 10);
+
+        $man1->introduce();
+        $man2->introduce();
+
+    ?>
 
 echo PHP_EOL;
 
